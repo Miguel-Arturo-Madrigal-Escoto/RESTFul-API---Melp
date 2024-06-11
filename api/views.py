@@ -20,6 +20,7 @@ from .constants import RESTAURANT_STATISTICS_ERR
 class RestaurantsViewSet(ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
+    
 
     @action(methods=['GET'], detail=False)
     def statistics(self, request: Request):

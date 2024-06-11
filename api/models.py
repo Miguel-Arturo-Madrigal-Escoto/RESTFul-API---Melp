@@ -1,6 +1,7 @@
 import uuid
 from django.contrib.gis.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.gis.geos import Point
 
 
 # Create your models here.
@@ -22,3 +23,7 @@ class Restaurant(models.Model):
     lat = models.FloatField()
     lng = models.FloatField()
     location = models.PointField()
+
+    def save(self, *args, **kwargs):
+        self.location = Point(self.lng, self.lat)
+        super().save(*args, **kwargs)
