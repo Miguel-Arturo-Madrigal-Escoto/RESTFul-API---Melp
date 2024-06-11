@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from api.views import HealthCheck
 
 
 urlpatterns = [
+    path('', HealthCheck.as_view()),
     path('api/', include('api.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:

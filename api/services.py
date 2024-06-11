@@ -11,7 +11,7 @@ class StatisticsService:
     def get_neighbor_restaurants(latitude: float, longitude: float, radius: float) -> tuple:
         """
             Returns the number of restaurants that fall inside the circle with center [x,y] 
-            and radius z,
+            and radius z.
         """
         center = Point(longitude, latitude)
         restaurants_filtered = Restaurant.objects.filter(
@@ -29,7 +29,8 @@ class StatisticsService:
         """
             Returns the average rating of restaurants inside the circle.
         """
-        return Restaurant.objects.filter(id__in=restaurant_ids).aggregate(avg_rating=Avg('rating'))['avg_rating']
+        rating = Restaurant.objects.filter(id__in=restaurant_ids).aggregate(avg=Avg('rating'))
+        return rating['avg']
     
 
     @staticmethod
@@ -37,5 +38,6 @@ class StatisticsService:
         """
             Returns the standard deviation of rating of restaurants inside the circle.
         """
-        return Restaurant.objects.filter(id__in=restaurant_ids).aggregate(stdev_rating=StdDev('rating'))['stdev_rating']
+        rating = Restaurant.objects.filter(id__in=restaurant_ids).aggregate(stdev=StdDev('rating'))
+        return rating['stdev']
     
