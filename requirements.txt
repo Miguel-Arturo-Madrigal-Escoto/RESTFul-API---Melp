@@ -3,3 +3,4 @@ djangorestframework
 pandas
 geopy
 psycopg2-binary
+python-dotenv

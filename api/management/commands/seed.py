@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.conf import settings
+from django.contrib.gis.geos import Point
 from api.models import Restaurant
 import pandas as pd
 
@@ -23,7 +24,8 @@ class Command(BaseCommand):
                 city=row['city'],
                 state=row['state'],
                 lat=row['lat'],
-                lng=row['lng']
+                lng=row['lng'],
+                location=Point(row['lng'], row['lat'])
             )
             for _, row in restaurants_data.iterrows()
         ]
