@@ -10,8 +10,8 @@ RUN pip install --upgrade pip
 COPY . .
 RUN pip install -r requirements.txt
 
-RUN apt-get install postgis*
-RUN apt-get install binutils libproj-dev gdal-bin
+RUN apt-get install postgis* && \
+    apt-get install binutils libproj-dev gdal-bin
 
 EXPOSE $PORT
 
