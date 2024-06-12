@@ -10,8 +10,8 @@ RUN pip install --upgrade pip
 COPY . .
 RUN pip install -r requirements.txt
 
-RUN chmod +x ./app.sh
-ENTRYPOINT [ "./app.sh" ]
+RUN chmod +x app.sh
+ENTRYPOINT [ "app.sh" ]
 
 EXPOSE $PORT
 
