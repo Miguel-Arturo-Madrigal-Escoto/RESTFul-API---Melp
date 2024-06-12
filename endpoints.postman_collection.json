@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "6edaaaf4-7bdc-4004-a29e-5b5c6b2aca3c",
+		"name": "Intelimétrica - Melp Company (Miguel Madrigal)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26297373"
+	},
+	"item": [
+		{
+			"name": "Status - Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Returns a 200 - OK response if the application is up and running."
+			},
+			"response": []
+		},
+		{
+			"name": "Documentation - Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/schema/swagger-ui/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"schema",
+						"swagger-ui",
+						""
+					]
+				},
+				"description": "Method to access the documentation through the Swagger UI (browser)."
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD - Fetch All Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						""
+					]
+				},
+				"description": "Retrieves all the restaurants."
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD - Fetch Restaurant By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/851f799f-0852-439e-b9b2-df92c43e7672/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672",
+						""
+					]
+				},
+				"description": "Retrieves the restaurant with the given UUID if exists."
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD - Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 3,\n    \"name\": \"EL Mero Mero\",\n    \"site\": \"https://elmeromero.com\",\n    \"email\": \"elmeromero@hotmail.com\",\n    \"phone\": \"3344556677\",\n    \"city\": \"Mérida\",\n    \"street\": \"82247 Mariano Barcenas\",\n    \"state\": \"Yucatán\",\n    \"lat\": 19.4392401826758,\n    \"lng\": -99.1331904409434\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						""
+					]
+				},
+				"description": "Creates a new restaurant in the database based on the provided JSON in the body object."
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD - Edit Restaurant By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 1,\n    \"phone\": \"3399009911\",\n    \"lat\": 19.8\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/851f799f-0852-439e-b9b2-df92c43e7672/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672",
+						""
+					]
+				},
+				"description": "Updates the restaurant with the given UUID based on the provided JSON in the body object."
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD - Delete Restaurant By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/71b950c8-5a6b-4d70-a0fc-4e840481a21f/",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"71b950c8-5a6b-4d70-a0fc-4e840481a21f",
+						""
+					]
+				},
+				"description": "Deletes the restaurant with the given UUID."
+			},
+			"response": []
+		},
+		{
+			"name": "Custom - Statistics (lat, lng & radius)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-api-melp-production.up.railway.app/api/restaurants/statistics/?latitude=19.4392401826759&longitude=-99.1331904409434&radius=600",
+					"protocol": "https",
+					"host": [
+						"restful-api-melp-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"statistics",
+						""
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "19.4392401826759"
+						},
+						{
+							"key": "longitude",
+							"value": "-99.1331904409434"
+						},
+						{
+							"key": "radius",
+							"value": "600"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

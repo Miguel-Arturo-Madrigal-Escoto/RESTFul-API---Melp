@@ -19,7 +19,7 @@ ENDPOINTS_DOCUMENTATION = {
         }
     },
     'list': {
-        'description': 'Retrieves all the restaurants',
+        'description': 'Retrieves all the restaurants.',
         'responses': {
             200: {
                 'example': [
