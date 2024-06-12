@@ -15,6 +15,8 @@ RUN pip install --upgrade pip
 COPY . .
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+RUN python manage.py collectstatic --noinput
 
-CMD ["gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:8000", "melpService.wsgi"]
+EXPOSE $PORT
+
+CMD ["gunicorn", "--workers=2", "--threads=4", "melpService.wsgi"]
