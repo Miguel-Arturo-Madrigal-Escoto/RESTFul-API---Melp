@@ -17,4 +17,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE $PORT
 
-CMD ["sh", "-c", "python manage.py migrate && gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:$PORT", "melpService.wsgi"]
+CMD ["sh", "-c", "python manage.py migrate api && gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:$PORT", "melpService.wsgi"]
