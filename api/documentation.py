@@ -148,7 +148,7 @@ ENDPOINTS_DOCUMENTATION = {
         },
         'parameters': [
             OpenApiParameter(
-                name='Latitude',
+                name='latitude',
                 type=OpenApiTypes.FLOAT,
                 location=OpenApiParameter.QUERY,
                 examples=[
@@ -159,7 +159,7 @@ ENDPOINTS_DOCUMENTATION = {
                 ]
             ),
             OpenApiParameter(
-                name='Longitude',
+                name='longitude',
                 type=OpenApiTypes.FLOAT,
                 location=OpenApiParameter.QUERY,
                 examples=[
@@ -170,7 +170,7 @@ ENDPOINTS_DOCUMENTATION = {
                 ]
             ),
             OpenApiParameter(
-                name='Radius',
+                name='radius',
                 type=OpenApiTypes.FLOAT ,
                 location=OpenApiParameter.QUERY,
                 description='Radius',
