@@ -15,4 +15,4 @@ ENTRYPOINT [ "./app.sh" ]
 
 EXPOSE $PORT
 
-CMD ["gunicorn", "--workers=2", "--threads=4", "melpService.wsgi"]
+CMD ["gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:$PORT", "melpService.wsgi"]

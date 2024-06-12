@@ -91,11 +91,11 @@ WSGI_APPLICATION = 'melpService.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'HOST': os.environ.get('HOST', ''),
-        'NAME': os.environ.get('NAME', ''),
-        'PORT': os.environ.get('PORT', ''),
-        'USER': os.environ.get('USER', ''),
-        'PASSWORD': os.environ.get('PASSWORD', ''),
+        'HOST': os.environ.get('PGHOST', ''),
+        'NAME': os.environ.get('PGDATABASE', ''),
+        'PORT': os.environ.get('PGPORT', ''),
+        'USER': os.environ.get('PGUSER', ''),
+        'PASSWORD': os.environ.get('PGPASSWORD', ''),
     }
 }
 
