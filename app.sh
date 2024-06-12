@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Install libraries for GeoDjango
 apt-get install postgis*
