@@ -10,8 +10,66 @@
 
 - 💪 Dockerization & Deployment and API Documentation using Swagger
 
-<h3 align="center">aaa</h3>
-![imag](image.png)
+<br>
+
+To run the project you need:
+```
+git clone https://github.com/Miguel-Arturo-Madrigal-Escoto/RESTFul-API---Melp
+```
+
+Create a virtual environment:
+```
+python3 -m venv env
+```
+
+After that, access the virtual environment
+```
+venv source env/bin/activate
+```
+
+Then, install the dependencies
+```
+pip3 install -r requirements.txt
+```
+
+Install the modules to enable GeoDjango for the spatial operations (PostGis & Gdal):
+```
+sudo apt-get install postgis*
+sudo apt-get install binutils libproj-dev gdal-bin
+```
+
+Fill the .env.example variables with your postgres database credentials and rename it to .env:
+```
+HOST='localhost'
+NAME='example'
+PORT='5432'
+USER='postgres'
+PASSWORD='example'
+```
+
+Run the migrations to create the database structure (make sure you have already created a postgres db)
+```
+python3 manage.py migrate
+```
+
+Seed the database with the .csv data using the command:
+```
+python3 manage.py seed
+```
+
+Run the application using the command:
+```
+python3 manage.py runserver
+```
+
+
+<h4>
+    By accessing the route "api/schema/swagger-ui/" you will have documentation to use the REST API.
+</h4>
+<p align="center">
+    <img src="./screenshots/swagger.png" width="80%" />
+</p>
+
 
 ## Author
 
