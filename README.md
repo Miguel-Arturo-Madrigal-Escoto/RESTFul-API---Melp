@@ -4,11 +4,32 @@
 <h3 align="center">This project covers:</h3>
 
 
-- 🌱 Importing .csv data and performing REST API CRUD operations with restaurants.
+- 🌱 Importing .csv data to perform REST API CRUD operations with restaurants.
 
 - 👨‍💻 Custom endpoint implementation to calculate restaurants inside a circle, as well as average & standard derivation around the rating.
 
-- 💪 Dockerization & Deployment and API Documentation using Swagger
+- 💪 Dockerization & Deployment to Railway.
+
+- 🍀 Documentation using Swagger.
+
+<h3 align="center">The core technologies used in this application: </h3>
+
+
+- 🐍 <b>Programming: </b> Python + Django REST Framework
+
+- 🛢 <b>Database (SQL): </b> PostgreSQL
+
+- 🐼 <b>Data management: </b> Pandas
+
+- 🌎 <b>Spatial Queries: </b> GeoDjango with PostGIS
+
+- 🐧 <b>OS: </b> GNU/Linux (Ubuntu)
+
+- 🐳 <b>Container: </b> Docker
+
+- ☁️ <b>Cloud: </b> Railway
+
+- 📗 <b>Documentation: </b> Swagger
 
 <br>
 
@@ -40,11 +61,14 @@ sudo apt-get install binutils libproj-dev gdal-bin
 
 Fill the .env.example variables with your postgres database credentials and rename it to .env:
 ```
-HOST='localhost'
-NAME='example'
-PORT='5432'
-USER='postgres'
-PASSWORD='example'
+ENV='local'
+PGHOST='localhost'
+PGDATABASE='example-db'
+PGPORT='1234'
+PGUSER='example-user'
+PGPASSWORD='*********'
+SECRET_KEY='*************'
+ALLOWED_HOSTS='127.0.0.1|localhost:8000'
 ```
 
 Run the migrations to create the database structure (make sure you have already created a postgres db)
