@@ -10,9 +10,9 @@ RUN pip install --upgrade pip
 COPY . .
 RUN pip install -r requirements.txt
 
-RUN chmod +x app.sh
-ENTRYPOINT [ "app.sh" ]
+RUN apt-get install postgis*
+RUN apt-get install binutils libproj-dev gdal-bin
 
 EXPOSE $PORT
 
-CMD ["gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:$PORT", "melpService.wsgi"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn", "--workers=2", "--threads=4", "--bind", "0.0.0.0:$PORT", "melpService.wsgi"]
