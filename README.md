@@ -94,6 +94,13 @@ python3 manage.py runserver
     <img src="./screenshots/swagger.png" width="80%" />
 </p>
 
+<h4>
+    This is the following architecture in Railway Cloud:
+</h4>
+<p align="center">
+    <img src="./screenshots/architecture.png" width="80%" />
+</p>
+
 
 ## Author
 
